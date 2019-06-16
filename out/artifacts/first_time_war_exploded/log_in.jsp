@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>登陆</title>
-    <script src="/rec/js/vue.min.js"></script>
     <!-- 新 Bootstrap4 核心 CSS 文件 -->
     <link rel="stylesheet" href="/rec/js/bootstrap.min.css">
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->

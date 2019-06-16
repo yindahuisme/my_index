@@ -5,7 +5,7 @@ public class User {
 
     private String password;
 
-    private Integer age;
+    private String friends;
 
     public String getUserName() {
         return userName;
@@ -23,11 +23,11 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public Integer getAge() {
-        return age;
+    public String getFriends() {
+        return friends;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setFriends(String friends) {
+        this.friends = friends == null ? null : friends.trim();
     }
 }

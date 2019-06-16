@@ -2,6 +2,8 @@ package firsttime.dao;
 
 import firsttime.entries.User;
 
+import java.util.List;
+
 public interface UserMapper {
     int deleteByPrimaryKey(String userName);
 
@@ -13,5 +15,10 @@ public interface UserMapper {
 
     int updateByPrimaryKeySelective(User record);
 
+    int updateByPrimaryKeyWithBLOBs(User record);
+
     int updateByPrimaryKey(User record);
+
+    //×Ô¶¨Òå
+    List<User> selectByUserName(String name);
 }

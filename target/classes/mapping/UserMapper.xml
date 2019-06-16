@@ -4,14 +4,21 @@
   <resultMap id="BaseResultMap" type="firsttime.entries.User" >
     <id column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="age" property="age" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="firsttime.entries.User" extends="BaseResultMap" >
+    <result column="friends" property="friends" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    user_name, password, age
+    user_name, password
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <sql id="Blob_Column_List" >
+    friends
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
     from user_t
     where user_name = #{userName,jdbcType=VARCHAR}
   </select>
@@ -20,9 +27,9 @@
     where user_name = #{userName,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="firsttime.entries.User" >
-    insert into user_t (user_name, password, age
+    insert into user_t (user_name, password, friends
       )
-    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
+    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{friends,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="firsttime.entries.User" >
@@ -34,8 +41,8 @@
       <if test="password != null" >
         password,
       </if>
-      <if test="age != null" >
-        age,
+      <if test="friends != null" >
+        friends,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -45,8 +52,8 @@
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="age != null" >
-        #{age,jdbcType=INTEGER},
+      <if test="friends != null" >
+        #{friends,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -56,16 +63,29 @@
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="age != null" >
-        age = #{age,jdbcType=INTEGER},
+      <if test="friends != null" >
+        friends = #{friends,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where user_name = #{userName,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="firsttime.entries.User" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="firsttime.entries.User" >
     update user_t
     set password = #{password,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER}
+      friends = #{friends,jdbcType=LONGVARCHAR}
     where user_name = #{userName,jdbcType=VARCHAR}
   </update>
+  <update id="updateByPrimaryKey" parameterType="firsttime.entries.User" >
+    update user_t
+    set password = #{password,jdbcType=VARCHAR}
+    where user_name = #{userName,jdbcType=VARCHAR}
+  </update>
+
+  <!--自定义-->
+  <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from user_t
+    where user_name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
+  </select>
 </mapper>

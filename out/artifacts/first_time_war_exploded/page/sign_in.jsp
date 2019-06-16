@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>注册</title>
-    <script src="/rec/js/vue.min.js"></script>
     <!-- 新 Bootstrap4 核心 CSS 文件 -->
     <link rel="stylesheet" href="/rec/js/bootstrap.min.css">
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
@@ -36,7 +35,10 @@ function signin() {
         alert("密码不能为空！");
         return;
     }
-    alert(userName)
+    if (userName.length>12) {
+        alert("名字长度不能大于12！");
+        return;
+    }
     $("#adminsignin").submit();
 
 }
@@ -46,8 +48,8 @@ function signin() {
     <h2>注册</h2>
     <form id="adminsignin" action="/user/signin.do" method="post">
         <div class="form-group">
-            <label for="username">用户名:</label>
-            <input type="text" name="username" class="form-control" id="username"  placeholder="请输入账号">
+            <label id="username_tip" for="username"><h5>用户名：</h5></label>
+            <input type="text" name="username" onkeyup="sign_ajax(this.value)" class="form-control" id="username"  placeholder="请输入账号">
         </div>
         <div class="form-group">
             <label for="password">密码:</label>
@@ -58,4 +60,30 @@ function signin() {
     </form>
 </div>
 </body>
+
+<script type="text/javascript">
+    // 注册用户名输入框添加按键事件
+    function sign_ajax(str) {
+
+        $.ajax(
+            {data:{"sign_input_string":str},
+                type:"POST",
+                url : "/ajax/sign_inputHint.do",
+                success:function (msg) {
+                    document.getElementById("username_tip").innerHTML=msg;
+                },
+                error : function() {
+                    document.getElementById("username_tip").innerHTML="wrong";
+
+                },
+                done : function() {
+                    document.getElementById("username_tip").innerHTML="done";
+
+                }
+
+            }
+        )
+    }
+
+</script>
 </html>

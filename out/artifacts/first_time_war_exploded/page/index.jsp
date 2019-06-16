@@ -11,7 +11,8 @@
     <script src="/rec/js/popper.min.js"></script>
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script src="/rec/js/bootstrap.min.js"></script>
-
+      <%--vue ajax--%>
+   <%--<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>--%>
 
       <%--移动端适配优先--%>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +23,7 @@
     /*h5,button,a,h3标签超出隐藏*/
 h5,h3,button,a{
   overflow: hidden;
+    margin: 0px;
 }
   .row{
     padding: 0px;
@@ -66,21 +68,15 @@ h5,h3,button,a{
       <div style="text-align: center; width: 160px;height: 40px; margin-top: 60px">
         <h5>好友列表</h5>
       </div>
-      <div  style="overflow-y: scroll; max-height: 700px; width: 180px;height: 400px;position: absolute; z-index: 1;">
-        <ul id="friend_list" class="list-group " style=" width: 150px;">
-          <li class="list-group-item" >First item</li>
-          <li class="list-group-item">Second item</li>
-          <li class="list-group-item">Third item</li>
-          <li class="list-group-item">First item</li>
-          <li class="list-group-item">Second item</li>
-          <li class="list-group-item">Third item</li>
-          <li class="list-group-item">First item</li>
-          <li class="list-group-item">Second item</li>
-          <li class="list-group-item">Third item</li>
-          <li class="list-group-item">First item</li>
-          <li class="list-group-item">Second item</li>
-          <li class="list-group-item">Third item</li>
-        </ul>
+      <div id="friends_list" style="overflow-y: scroll; max-height: 700px; width: 180px;height: 400px;position: absolute; z-index: 1;">
+            <%--user--%>
+          <div onclick="click_start_chat(this)" data-target="#demo" data-slide-to="0" style="margin-bottom: 2px;">
+              <div class=" alert alert-info" style="word-break:break-all; margin: 0px;">
+                  <h5 style="text-align: center">
+                      hello
+                  </h5>
+              </div>
+          </div>
 
 
     </div>
@@ -110,33 +106,44 @@ h5,h3,button,a{
 
 
               <%--开始聊天阶段--%>
-            <div id="chat_state2" style="visibility: hidden; overflow-y: scroll; margin-top: 0px;width: 420px;height: 375px; margin-left: 65px;border: 5px dashed whitesmoke;position: absolute;z-index: 1;">
-            <ul style=" list-style: none;padding-left: 0px;">
-            <%--对方聊天--%>
-                 <div class="row" style="margin-bottom: 10px;width: 350px;">
-                <div class="col-sm-2" style="height: 40px;">
-                  <img src="/rec/image/rect.png" class="rounded-circle" style=" width: 40px;height: 40px;">
-                </div>
-                <div class="col-sm-10 alert alert-success" style="word-break:break-all; margin: 0px;">
-                  <h5>
-                    hello named sdfsfdkghjgjgjgjhfjyjyukkjhgmhgshsfmfhmjmhm, 计算框架是滴嘎嘎fadgfgshfshsfd大使馆的asfsfsgagdsgsd   发的伤口fdhfdhdnghjnjgfghdjgjhdg飒飒sscsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-                  </h5>
-                </div>
-              </div>
-                <%--我方聊天--%>
-              <div class="row" style="margin: 0px 0px 10px 35px;width: 350px;">
-                <div class="col-10 alert alert-success" style="word-break:break-all; margin: 0px;">
-                  <h5>
-                    hello named sdfsfdkghjgjgjgjhfjyjyukkjhgmhgmfhmjmhm, 计算框架fdsfssfhdhshgsh是滴嘎嘎大使馆的asfsfsgagdsgsd   发的伤口fdhfdhdnghjnjgfghdjgjhdg飒飒sscsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-                  </h5>
-                </div>
-                <div class="col-2" style="height: 40px;padding:0px 0px 0px 18px;">
-                  <img src="/rec/image/bg.jpg" class="rounded-circle" style=" width: 40px;height: 40px;">
-                </div>
-              </div>
+              <div id="chat_state2" style="visibility: hidden;height: 475px;width: 420px; margin-left: 65px;position: absolute;z-index: 1;">
+
+           <%--聊天--%>
+            <div class="pre-scrollable" id="scroll_div" style="  margin-top: 0px;height: 375px;border: 5px dashed whitesmoke;">
+            <ul id="chat_area" style=" list-style: none;padding-left: 0px;">
+                <%--<div style="height: 25px;text-align: center"><h5>2019.06.12 06.36.51</h5></div>--%>
+                <%--<div class="row" style="margin-bottom: 10px;width: 350px;">--%>
+                <%--<div class="col-sm-2" style="height: 40px;">--%>
+                  <%--<img src="/rec/image/rect.png" class="rounded-circle" style=" width: 40px;height: 40px;">--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-10 alert alert-success" style="word-break:break-all; margin: 0px;">--%>
+                  <%--<h5>--%>
+                    <%--hello--%>
+                  <%--</h5>--%>
+                <%--</div>--%>
+              <%--</div>--%>
+
+
+                <%--<div style="height: 25px;text-align: center"><h5>2019.06.12 06.36.51</h5></div>--%>
+                <%--<div class="row" style="margin: 0px 0px 10px 35px;width: 350px;">--%>
+                  <%--<div class="col-10 alert alert-success" style="word-break:break-all; margin: 0px;">--%>
+                    <%--<h5>--%>
+                        <%--hello--%>
+                    <%--</h5>--%>
+                <%--</div>--%>
+                <%--<div class="col-2" style="height: 40px;padding:0px 0px 0px 18px;">--%>
+                  <%--<img src="/rec/image/bg.jpg" class="rounded-circle" style=" width: 40px;height: 40px;">--%>
+                <%--</div>--%>
+              <%--</div>--%>
             </ul>
             </div>
 
+               <%--发送消息输入--%>
+               <div class="row" style="margin-top: 30px">
+                  <input id="chat_input" class="form-control col-9"  placeholder="请输入内容">
+                    <button class="btn btn-primary col-3" onclick="send_msg_ajax()"><h5>发送</h5></button>
+               </div>
+              </div>
 
 
 
@@ -146,10 +153,24 @@ h5,h3,button,a{
                 <%--加好友界面--%>
           <div class="carousel-item " style="height: 590px;">
             <div style="height: 40px;"></div>
-            <h5 style="height: 24px;text-align: center;">加好友</h5>
-            <div style="height: 40px;"></div>
-            <img src="/rec/image/rect_chat.png" >
-          </div>
+              <%--加好友输入框--%>
+              <div class="row" style="height: 40px;">
+                  <div class="col-2"></div>
+                  <input id="search_input" type="text" class="form-control col-8" oninput="search_ajax(this.value)" style="height: 40px;padding:0px 0px 0px 5px;" placeholder="请输入被管理的用户名">
+                  <div class="col-2"></div>
+
+              </div>
+            <div style="height: 32px;"></div>
+            <img src="/rec/image/rect_chat.png" style="position: absolute; z-index: 0;">
+
+                <%--搜索列表--%>
+              <div id="textHint" style="overflow-y: scroll; height: 475px;width: 420px; margin-left: 65px;border: 5px dashed whitesmoke;position: absolute;z-index: 1;">
+                  <div style=" margin-top: 190px;width: 350px;height: 55px;position: absolute;z-index: 1;">
+                  <h3 style="text-align: center"><b>在这里添加/删除好友哦！</b></h3>
+                  </div>
+
+              </div>
+              </div>
 
 
 
@@ -169,7 +190,7 @@ h5,h3,button,a{
     <div class="col-2" >
       <div id="index_chat_div" class="carousel-indicators btn-group-vertical" style="position: relative; width: 80px;height: 400px; background-image: url('/rec/image/site_aside_bg.png'); margin-top: 100px;margin-left: 60px;">
           <button type="button" data-target="#demo" data-slide-to="0" class="btn btn-light"><h5>好友</h5></button>
-          <button type="button" data-target="#demo" data-slide-to="1" class="btn btn-light"><h6>加好友</h6></button>
+          <button type="button" data-target="#demo" data-slide-to="1" class="btn btn-light"><h6>管理好友</h6></button>
           <button type="button" data-target="#demo" data-slide-to="2" class="btn btn-light"><h5>设置</h5></button>
 
       </div>
@@ -180,26 +201,223 @@ h5,h3,button,a{
 </body>
 
 
-  <script src="/rec/js/index.js"></script>
-<script>
+
+
+<script type="text/javascript">
+
+    //删除好友
+    function del_friend_ajax(friend_name) {
+        var name='${username}';
+        $.ajax(
+            {data:{
+                    "current_user_name":name,
+                    "destination_name":friend_name
+                },
+                type:"POST",
+                url : "/ajax/del_friend.do",
+                success:function (msg) {
+                var input_value=document.getElementById("search_input").value;
+                   search_ajax(input_value);
+                   flush_friends_list();
+
+                },
+            }
+        )
+    }
+
+
+    //添加好友
+    function add_friend_ajax(friend_name) {
+        var name='${username}';
+        $.ajax(
+            {data:{
+                    "current_user_name":name,
+                    "destination_name":friend_name
+                },
+                type:"POST",
+                url : "/ajax/add_friend.do",
+                success:function (msg) {
+                    var input_value=document.getElementById("search_input").value;
+                    search_ajax(input_value);
+                    flush_friends_list();
+
+                },
+            }
+        )
+    }
+
+
+
+
+    //刷新聊天内容
+    function flush_msg_ajax(destination_username,command) {
+        var name='${username}';
+
+        $.ajax(
+            {data:{
+                    "current_user_name":name,
+                    "destination_name":destination_username
+                },
+                type:"POST",
+                url : "/ajax/flush_msg.do",
+                success:function (msg) {
+                    document.getElementById("chat_area").innerHTML=msg;
+                    if(command==1)
+                    document.getElementById("scroll_div").scrollTop=document.getElementById("scroll_div").scrollHeight;
+
+                },
+                error : function() {
+                    document.getElementById("chat_area").innerHTML="wrong";
+
+                },
+                done : function() {
+                    document.getElementById("chat_area").innerHTML="done";
+
+                }
+
+            }
+        )
+    }
+//每1s刷新一次
+    function flush_msg() {
+        var des_name=document.getElementById("chat_title").innerHTML;
+        if(des_name!="聊天")
+            flush_msg_ajax(des_name,0)
+    }
+   setInterval(flush_msg,1000)
+
+
+    //发消息事件
+    function send_msg_ajax() {
+        var message=document.getElementById("chat_input").value;
+        //消息不为空
+        if(message=="")
+            return;
+        var name='${username}';
+
+        $.ajax(
+            {data:{"message":message,
+                    "current_user_name":name,
+                    "destination_username":document.getElementById("chat_title").innerHTML
+                },
+                type:"POST",
+                url : "/ajax/send_msg.do",
+                success:function (msg) {
+                    document.getElementById("chat_input").value=""
+                    flush_msg_ajax(document.getElementById("chat_title").innerHTML,1);
+                },
+                error : function() {
+                    document.getElementById("chat_area").innerHTML="wrong";
+
+                },
+                done : function() {
+                    document.getElementById("chat_area").innerHTML="done";
+
+                }
+
+            }
+        )
+    }
+
+
+
+    //初始化，加载好友列表
+    function flush_friends_list () {
+        var name='${username}';
+        $.ajax(
+            {data:{"current_user_name":name
+                },
+                type:"POST",
+                url : "/ajax/friends_list.do",
+                success:function (msg) {
+                    document.getElementById("friends_list").innerHTML=msg;
+                },
+                error : function() {
+                    document.getElementById("friends_list").innerHTML="wrong";
+
+                },
+                done : function() {
+                    document.getElementById("friends_list").innerHTML="done";
+
+                }
+
+            }
+        )
+    }
+    window.onload=flush_friends_list();
+
+
+    // 搜索输入框添加按键事件
+    function search_ajax(str) {
+        var name='${username}';
+        $.ajax(
+            {data:{"search_string":str,
+                "current_user_name":name
+                },
+                type:"POST",
+                url : "/ajax/searchHint.do",
+                success:function (msg) {
+                    document.getElementById("textHint").innerHTML=msg;
+                },
+                error : function() {
+                    document.getElementById("textHint").innerHTML="wrong";
+
+                },
+                done : function() {
+                    document.getElementById("textHint").innerHTML="done";
+
+                }
+
+            }
+        )
+    }
+
+
+
+
+    // 聊天界面切换
+    function click_start_chat(obj){
+
+        var children= obj.firstElementChild;
+        while (children.tagName!="H5")
+        {
+            children=children.firstElementChild;
+        }
+
+        var talkingto =children.innerHTML;
+        document.getElementById("chat_title").innerHTML=talkingto;
+        document.getElementById("chat_state1").style.visibility="hidden";
+        document.getElementById("chat_state2").style.visibility="visible";
+
+        flush_msg_ajax(talkingto,1);
+
+    }
+
+
+    //为提交按钮添加事件send_msg_ajax()
+    $(document).ready(
+        function(){
+            document.onkeydown = function(){
+                var oEvent = window.event;
+                if (oEvent.keyCode==13) {
+                    send_msg_ajax()
+                }
+            }
+        });
+
 
     // 为好友列表添加点击事件
-   var target= document.getElementById("friend_list");
-   var first_child=target.firstElementChild;
-   var last_child=target.lastElementChild;
-   while(first_child!=last_child){
-       first_child.addEventListener("click",function (evt) {
-           click_start_chat(evt.target);
-       });
-       first_child=first_child.nextElementSibling;
-   }
-    last_child.addEventListener("click",function (evt) {
-        click_start_chat(evt.target);
-    });
-
-
-
+    // var target= document.getElementById("friend_list");
+    // var first_child=target.firstElementChild;
+    // var last_child=target.lastElementChild;
+    // while(first_child!=last_child){
+    //     first_child.addEventListener("click",function (evt) {
+    //         click_start_chat(evt.target);
+    //     });
+    //     first_child=first_child.nextElementSibling;
+    // }
+    //  last_child.addEventListener("click",function (evt) {
+    //      click_start_chat(evt.target);
+    //  });
 </script>
-
-
 </html>
