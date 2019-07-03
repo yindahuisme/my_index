@@ -3,11 +3,15 @@ package firsttime.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import firsttime.entries.User;
 import firsttime.service.IUserService;
 import firsttime.util.File_tool;
 import firsttime.util.Log;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.HttpClients;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.*;
@@ -21,6 +25,10 @@ import java.util.*;
 public class ajax_controller {
     @Resource
     private IUserService iuserService;
+    //发送消息时线程要用到，不建议写在这
+    public static String msg;
+    public static File d_file;
+    public static File m_file;
 
     @RequestMapping(value="/del_friend.do")
     public void del_friend(HttpServletRequest request,HttpServletResponse response) throws IOException, ParseException {
@@ -109,9 +117,9 @@ public class ajax_controller {
         Properties sysProperty=System.getProperties();
         if(sysProperty.getProperty("os.name").toLowerCase().startsWith("win"))
         {
-                 self_file    =  (this.getClass().getClassLoader().getResource("./").getPath()+"static/chat/"+current_username.trim()+".txt").substring(1);
+            self_file=  (this.getClass().getClassLoader().getResource("./").getPath()+"static/chat/"+current_username.trim()+".txt").substring(1);
         }else {
-            self_file    =  (this.getClass().getClassLoader().getResource("./").getPath()+"static/chat/"+current_username.trim()+".txt");
+            self_file=  (this.getClass().getClassLoader().getResource("./").getPath()+"static/chat/"+current_username.trim()+".txt");
         }
 
         File m_file=new File(self_file);
@@ -137,6 +145,35 @@ public class ajax_controller {
         StringBuilder over_file=new StringBuilder();
         boolean flag=false;
         SimpleDateFormat sdf= new SimpleDateFormat("yyyy.MM.dd hh.mm.ss");
+
+
+        //如果是客服,添加提示语
+        //全查
+        List<User> users=iuserService.getUsersByName("");
+        StringBuilder users_info=new StringBuilder();
+        users_info.append("当前系统用户有:");
+        for(User user:users){
+         users_info.append(user.getUserName()+",");
+        }
+        users_info.delete(users_info.length()-1,users_info.length());
+        users_info.append(";点击右侧‘管理好友’，添加他们，开始聊天吧！");
+
+        if(destination_name.trim().equals("机器人客服")){
+            result.append("   <div style=\"float:left;width:100%; height: 25px;text-align: center\"><h5 style=\"color: orangered;\">"+sdf.format(new Date())+"</h5></div>\n" +
+                    "                <div style=\"margin-bottom: 10px;width: 350px;\">\n" +
+                    "                <div style=\"float:left;width: 15%;height: 40px;\">\n" +
+                    "                  <img src=\"/rec/image/head_icon1.png\" class=\"rounded-circle\" style=\" width: 40px;height: 40px;\">\n" +
+                    "                </div>\n" +
+                    "                <div class=\" alert alert-warning\" style=\"float:right;width: 85%;word-break:break-all; margin: 0px;\">\n" +
+                    "                  <h5>\n" +users_info+
+                    "\n" +
+                    "                  </h5>\n" +
+                    "                </div>\n" +
+                    "              </div>");
+        }
+
+
+
         while (tokenizer.hasMoreTokens()){
 
             String msg_item=tokenizer.nextToken();
@@ -159,26 +196,26 @@ public class ajax_controller {
                 //判断我方输入，敌方输入
                 if(Integer.valueOf(msg_item.substring(19, 21))>50)
                 {
-                    result.append("   <div style=\"height: 25px;text-align: center\"><h5>"+time+"</h5></div>\n" +
-                            "                <div class=\"row\" style=\"margin-bottom: 10px;width: 350px;\">\n" +
-                            "                <div class=\"col-sm-2\" style=\"height: 40px;\">\n" +
+                    result.append("   <div style=\"float:left;width:100%; height: 25px;text-align: center\"><h5>"+time+"</h5></div>\n" +
+                            "                <div style=\"margin-bottom: 10px;width: 350px;\">\n" +
+                            "                <div style=\"float:left;width: 15%;height: 40px;\">\n" +
                             "                  <img src=\"/rec/image/head_icon1.png\" class=\"rounded-circle\" style=\" width: 40px;height: 40px;\">\n" +
                             "                </div>\n" +
-                            "                <div class=\"col-sm-10 alert alert-success\" style=\"word-break:break-all; margin: 0px;\">\n" +
+                            "                <div class=\" alert alert-success\" style=\"float:right;width: 85%;word-break:break-all; margin: 0px;\">\n" +
                             "                  <h5>\n" +message+
                             "\n" +
                             "                  </h5>\n" +
                             "                </div>\n" +
                             "              </div>");
                 }else{
-                    result.append("   <div style=\"height: 25px;text-align: center\"><h5>"+time+"</h5></div>\n" +
-                            "                <div class=\"row\" style=\"margin: 0px 0px 10px 35px;width: 350px;\">\n" +
-                            "                  <div class=\"col-10 alert alert-success\" style=\"word-break:break-all; margin: 0px;\">\n" +
+                    result.append("   <div style=\"float:left;width:100%; height: 25px;text-align: center\"><h5>"+time+"</h5></div>\n" +
+                            "                <div style=\"margin: 0px 0px 10px 35px;width: 350px;\">\n" +
+                            "                  <div class=\" alert alert-secondary\" style=\"float:left;width: 85%;word-break:break-all; margin: 0px;\">\n" +
                             "                    <h5>\n" +message+
                             "\n" +
                             "                    </h5>\n" +
                             "                </div>\n" +
-                            "                <div class=\"col-2\" style=\"height: 40px;padding:0px 0px 0px 18px;\">\n" +
+                            "                <div  style=\"float:right;width: 15%;height: 40px;padding:0px 0px 0px 15px;\">\n" +
                             "                  <img src=\"/rec/image/head_icon.png\" class=\"rounded-circle\" style=\" width: 40px;height: 40px;\">\n" +
                             "                </div>\n" +
                             "              </div>");
@@ -211,7 +248,7 @@ public class ajax_controller {
 //        获取请求数据
         String current_username = request.getParameter("current_user_name");
         String destination_username=request.getParameter("destination_username");
-        String msg=request.getParameter("message");
+        msg=request.getParameter("message");
 
          PrintWriter writer=  response.getWriter();
          //得到文件路径
@@ -228,8 +265,8 @@ public class ajax_controller {
             self_file = (this.getClass().getClassLoader().getResource("./").getPath()+"static/chat/"+current_username.trim()+".txt");
         }
 
-        File d_file=new File(destination_file);
-        File m_file=new File(self_file);
+         d_file=new File(destination_file);
+         m_file=new File(self_file);
 
 
         if(!d_file.exists())
@@ -247,6 +284,63 @@ public class ajax_controller {
         //自己消息
         File_tool.append_content(m_file,"%%##**"+dateFormat.format(new Date())+(destination_username.trim().length()+10)+destination_username.trim()+msg);
 
+        //如果目标为机器人客服
+        if(destination_username.trim().equals("机器人客服")){
+            new Thread(()->{
+                //    http://api.qingyunke.com/
+                //    智能机器人助手
+                String requesturl = "http://api.qingyunke.com/api.php?key=free&appid=0&msg="+msg.trim();
+                HttpUriRequest hrequest = new HttpGet(requesturl);
+
+                CloseableHttpResponse hresponse = null;
+                try {
+                    hresponse = HttpClients.createDefault().execute(hrequest);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if(hresponse.getStatusLine().getStatusCode()==200){
+
+                    HttpEntity entity = hresponse.getEntity();
+                    StringBuilder result=new StringBuilder();
+                    String content="";
+                    int len=0;
+                    byte[] buffer=new byte[1024];
+                    try {
+                        while ((len=entity.getContent().read(buffer))!=-1){
+                         result.append(new String(buffer,0,len,"utf-8"));
+                    }
+                    } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                    StringTokenizer tokenizer=new StringTokenizer(result.toString().substring(1,result.toString().length()-1),",");
+
+                    while (tokenizer.hasMoreTokens()){
+                        Integer status=Integer.valueOf(tokenizer.nextToken().substring(9));
+                        if(status==0){
+                            //正常状态
+                            String temp=tokenizer.nextToken();
+                            content=temp.substring(11,temp.length()-1);
+                            break;
+                        }else{
+                            content="机器人挂了，请稍后再试试吧！";break;
+                        }
+                    }
+
+                    SimpleDateFormat Format=new SimpleDateFormat("yyyy.MM.dd hh.mm.ss");
+
+                    try {
+                        //自己消息
+                        File_tool.append_content(m_file,"%%##**"+Format.format(new Date())+(destination_username.trim().length()+50)+destination_username.trim()+content);
+                        //对方消息
+                        File_tool.append_content(d_file,"%%##**"+Format.format(new Date())+(current_username.trim().length()+10)+current_username.trim()+content);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }}).start();
+        }
     }
 
 
@@ -264,6 +358,14 @@ public class ajax_controller {
 
         //保存结果
         StringBuilder result=new StringBuilder();
+        //添加机器人客服
+        result.append("<div onclick=\"click_start_chat(this)\" data-target=\"#demo\" data-slide-to=\"0\" style=\"margin-bottom: 2px;\">\n" +
+                "              <div class=\" alert alert-warning\" style=\"word-break:break-all; margin: 0px;\">\n" +
+                "                  <h5 style=\"text-align: center\">\n" +"机器人客服"+
+                "\n" +
+                "                  </h5>\n" +
+                "              </div>\n" +
+                "          </div>");
         while (tokenizer.hasMoreTokens())
         {
             result.append("<div onclick=\"click_start_chat(this)\" data-target=\"#demo\" data-slide-to=\"0\" style=\"margin-bottom: 2px;\">\n" +

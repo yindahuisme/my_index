@@ -1,6 +1,12 @@
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URL;
 import java.text.ParseException;
@@ -102,12 +108,49 @@ public void test1() throws IOException, ParseException {
 
 }
 @Test
-public void test2(){
-    Properties sysProperty=System.getProperties();
-    if(sysProperty.getProperty("os.name").toLowerCase().startsWith("win"))
-    {
-        System.out.println("win");
-    }
+public void test2() throws IOException {
+//    Properties sysProperty=System.getProperties();
+//    if(sysProperty.getProperty("os.name").toLowerCase().startsWith("win"))
+//    {
+//        System.out.println("win");
+//    }
 
-}
+
+////    http://api.qingyunke.com/
+////    智能机器人助手
+//    String requesturl = "http://api.qingyunke.com/api.php?key=free&appid=0&msg=你是谁？";
+//HttpUriRequest request = new HttpGet(requesturl);
+//
+//CloseableHttpResponse response = HttpClients.createDefault().execute(request);
+//if(response.getStatusLine().getStatusCode()==200){
+//
+//HttpEntity entity = response.getEntity();
+//StringBuilder result=new StringBuilder();
+//String content="";
+//int len=0;
+//byte[] buffer=new byte[1024];
+//while ((len=entity.getContent().read(buffer))!=-1){
+//    result.append(new String(buffer,0,len,"utf-8"));
+//}
+//StringTokenizer tokenizer=new StringTokenizer(result.toString().substring(1,result.toString().length()-1),",");
+//
+//while (tokenizer.hasMoreTokens()){
+//    Integer status=Integer.valueOf(tokenizer.nextToken().substring(9));
+//    if(status==0){
+//        //正常状态
+//        String temp=tokenizer.nextToken();
+//        content=temp.substring(11,temp.length()-1);
+//                break;
+//    }else{
+//        content="机器人挂了，请稍后再试试吧！";break;
+//    }
+//}
+//System.out.println("返回结果："+content);
+
+//}
+ }
+
+
+
+
 }

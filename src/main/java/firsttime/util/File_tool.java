@@ -15,7 +15,7 @@ public class File_tool {
         }
     }
 
-    public static void append_content(java.io.File file, String append) throws IOException {
+    public static synchronized void append_content(java.io.File file, String append) throws IOException {
         BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(file));
         StringBuilder des_builder=new StringBuilder();
         int len=0;

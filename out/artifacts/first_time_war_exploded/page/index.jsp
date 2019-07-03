@@ -106,7 +106,7 @@ h5,h3,button,a{
 
 
               <%--开始聊天阶段--%>
-              <div id="chat_state2" style="visibility: hidden;height: 475px;width: 420px; margin-left: 65px;position: absolute;z-index: 1;">
+              <div id="chat_state2" style=" visibility: hidden;height: 475px;width: 420px; margin-left: 65px;position: absolute;z-index: 1;">
 
            <%--聊天--%>
             <div class="pre-scrollable" id="scroll_div" style="  margin-top: 0px;height: 375px;border: 5px dashed whitesmoke;">
@@ -139,7 +139,7 @@ h5,h3,button,a{
             </div>
 
                <%--发送消息输入--%>
-               <div class="row" style="margin-top: 30px">
+               <div class="row" style=" margin-top: 30px">
                   <input id="chat_input" class="form-control col-9"  placeholder="请输入内容">
                     <button class="btn btn-primary col-3" onclick="send_msg_ajax()"><h5>发送</h5></button>
                </div>
@@ -188,7 +188,7 @@ h5,h3,button,a{
 
           <%--右边布局--%>
     <div class="col-2" >
-      <div id="index_chat_div" class="carousel-indicators btn-group-vertical" style="position: relative; width: 80px;height: 400px; background-image: url('/rec/image/site_aside_bg.png'); margin-top: 100px;margin-left: 60px;">
+      <div id="index_chat_div" class=" carousel-indicators btn-group-vertical" style=" position: relative; width: 80px;height: 400px; background-image: url('/rec/image/site_aside_bg.png'); margin-top: 100px;margin-left: 60px;">
           <button type="button" data-target="#demo" data-slide-to="0" class="btn btn-light"><h5>好友</h5></button>
           <button type="button" data-target="#demo" data-slide-to="1" class="btn btn-light"><h6>管理好友</h6></button>
           <button type="button" data-target="#demo" data-slide-to="2" class="btn btn-light"><h5>设置</h5></button>
