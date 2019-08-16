@@ -198,6 +198,9 @@ h5,h3,button,a{
 </div>
 </div>
 </div>
+
+
+<div style="float: left;visibility: hidden" id="chat_num"></div>
 </body>
 
 
@@ -205,6 +208,8 @@ h5,h3,button,a{
 
 <script type="text/javascript">
 
+      // var len=document.getElementById("chat_area").innerHTML;
+      // attributes.setAttribute("page",len);
     //删除好友
     function del_friend_ajax(friend_name) {
         var name='${username}';
@@ -250,7 +255,7 @@ h5,h3,button,a{
 
 
     //刷新聊天内容
-    function flush_msg_ajax(destination_username,command) {
+    function flush_msg_ajax(destination_username) {
         var name='${username}';
 
         $.ajax(
@@ -261,9 +266,16 @@ h5,h3,button,a{
                 type:"POST",
                 url : "/ajax/flush_msg.do",
                 success:function (msg) {
-                    document.getElementById("chat_area").innerHTML=msg;
-                    if(command==1)
-                    document.getElementById("scroll_div").scrollTop=document.getElementById("scroll_div").scrollHeight;
+                // var len=attributes.getAttribute("chat_num");
+                    var len=document.getElementById("chat_num").innerHTML;
+                if(len!= msg.length.toString()) {
+                    // alert("len:"+len+"msg:"+msg.length.toString())
+
+                    document.getElementById("chat_area").innerHTML = msg;
+                    document.getElementById("scroll_div").scrollTop = document.getElementById("scroll_div").scrollHeight;
+                // attributes.setAttribute("chat_num",msg.length);
+                    document.getElementById("chat_num").innerHTML = msg.length;
+                }
 
                 },
                 error : function() {
@@ -281,8 +293,10 @@ h5,h3,button,a{
 //每1s刷新一次
     function flush_msg() {
         var des_name=document.getElementById("chat_title").innerHTML;
-        if(des_name!="聊天")
-            flush_msg_ajax(des_name,0)
+        if(des_name!="聊天"){
+            flush_msg_ajax(des_name)
+
+        }
     }
    setInterval(flush_msg,1000)
 
@@ -304,8 +318,9 @@ h5,h3,button,a{
                 url : "/ajax/send_msg.do",
                 success:function (msg) {
                     document.getElementById("chat_input").value=""
-                    flush_msg_ajax(document.getElementById("chat_title").innerHTML,1);
-                },
+                    flush_msg_ajax(document.getElementById("chat_title").innerHTML);
+
+                    },
                 error : function() {
                     document.getElementById("chat_area").innerHTML="wrong";
 
@@ -389,7 +404,7 @@ h5,h3,button,a{
         document.getElementById("chat_state1").style.visibility="hidden";
         document.getElementById("chat_state2").style.visibility="visible";
 
-        flush_msg_ajax(talkingto,1);
+       flush_msg_ajax(talkingto);
 
     }
 

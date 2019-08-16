@@ -8,11 +8,14 @@ import org.junit.Test;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -116,8 +119,8 @@ public void test2() throws IOException {
 //    }
 
 
-////    http://api.qingyunke.com/
-////    智能机器人助手
+//    http://api.qingyunke.com/
+//    智能机器人助手
 //    String requesturl = "http://api.qingyunke.com/api.php?key=free&appid=0&msg=你是谁？";
 //HttpUriRequest request = new HttpGet(requesturl);
 //
@@ -146,8 +149,37 @@ public void test2() throws IOException {
 //    }
 //}
 //System.out.println("返回结果："+content);
-
+//
 //}
+//    BufferedReader br;
+//    InputStream is;
+//
+//        String request= "你是谁？";
+//        String info = URLEncoder.encode(request, "utf-8");
+//        String APIkey = "60fe6afc27cf41f2af702d9086b795f7";
+//        String getUrl = "http://www.tuling123.com/openapi/api?key="
+//                +APIkey+"&info="+info;
+//        URL url = new URL(getUrl);
+//        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+//        conn.connect();
+//        is = conn.getInputStream();
+//        InputStreamReader isr = new InputStreamReader(is, "utf-8");
+//
+//        br = new BufferedReader(isr);
+//        String line = "";
+//        StringBuffer sb = new StringBuffer();
+//        while((line = br.readLine()) != null){
+//            sb.append(line);
+//        }
+//        String sb2 = sb.substring(sb.lastIndexOf(":"));
+//        System.out.println("小图图:"+sb2.toString());
+//        br.close();
+//	    is.close();
+//
+//    String content="{br}";
+//    String tmp=content.replaceAll("br}","<br>");
+//    System.out.println(tmp);
+
  }
 
 

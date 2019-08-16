@@ -36,7 +36,7 @@
     <session id="-3883190">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.17" value="1" />
@@ -50,19 +50,20 @@
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.32" value="2" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.35" value="2" />
-          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.36" value="2" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.69" value="1" />
-          <entry key="project.opened" value="31" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -71,9 +72,9 @@
           <entry key="css" value="100" />
           <entry key="dummy" value="5" />
           <entry key="html" value="1163" />
-          <entry key="java" value="7953" />
+          <entry key="java" value="8222" />
           <entry key="js" value="650" />
-          <entry key="jsp" value="7959" />
+          <entry key="jsp" value="8520" />
           <entry key="php" value="5" />
           <entry key="properties" value="104" />
           <entry key="txt" value="54" />
@@ -85,8 +86,8 @@
           <entry key="CLASS" value="1" />
           <entry key="CSS" value="100" />
           <entry key="HTML" value="1163" />
-          <entry key="JAVA" value="7953" />
-          <entry key="JSP" value="7959" />
+          <entry key="JAVA" value="8222" />
+          <entry key="JSP" value="8520" />
           <entry key="JavaScript" value="650" />
           <entry key="PHP" value="5" />
           <entry key="PLAIN_TEXT" value="59" />
@@ -135,8 +136,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/controller/ajax_controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="161" column="54" selection-start-line="161" selection-start-column="54" selection-end-line="161" selection-end-column="54" />
+            <state relative-caret-position="19">
+              <caret line="229" column="9" selection-start-line="229" selection-start-column="9" selection-end-line="229" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,7 +148,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/util/File_tool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="475">
               <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -168,7 +169,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
+            <state relative-caret-position="133">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
@@ -177,7 +178,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/service/IUserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="114">
               <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
             </state>
           </provider>
@@ -186,7 +187,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/controller/user_controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
+            <state relative-caret-position="494">
               <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
             </state>
           </provider>
@@ -195,15 +196,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/page/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="279" column="5" lean-forward="true" selection-start-line="279" selection-start-column="5" selection-end-line="279" selection-end-column="5" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="5130">
+              <caret line="270" column="49" selection-start-line="270" selection-start-column="49" selection-end-line="270" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -211,8 +205,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="2983">
+              <caret line="177" selection-start-line="177" selection-start-column="2" selection-end-line="180" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -220,7 +217,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
+            <state relative-caret-position="399">
               <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
             </state>
           </provider>
@@ -306,7 +303,6 @@
         <option value="$PROJECT_DIR$/src/main/java/firsttime/util/File.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/out/artifacts/first_time_war_exploded/WEB-INF/classes/static/chat/root@test.txt" />
-        <option value="$PROJECT_DIR$/src/test/java/test.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/out/artifacts/first_time_war_exploded/WEB-INF/classes/static/chat/root@yindahu.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
@@ -315,8 +311,9 @@
         <option value="$USER_HOME$/Desktop/尹大虎的主页.html" />
         <option value="$PROJECT_DIR$/web/page/尹大虎的主页.html" />
         <option value="$PROJECT_DIR$/web/page/test.jsp" />
-        <option value="$PROJECT_DIR$/web/page/index.jsp" />
+        <option value="$PROJECT_DIR$/src/test/java/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/firsttime/controller/ajax_controller.java" />
+        <option value="$PROJECT_DIR$/web/page/index.jsp" />
       </list>
     </option>
   </component>
@@ -370,7 +367,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-19" />
     <option name="y" value="-24" />
     <option name="width" value="1382" />
@@ -382,8 +379,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="CatdeaLogs" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -717,6 +712,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="CatdeaLogs" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -724,7 +721,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561912667681" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562578258558" />
     <property name="last_opened_file_path" value="E:/jar/httpclient-4.3.1.jar!/" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1092,28 +1089,14 @@
       <workItem from="1560598931700" duration="2142000" />
       <workItem from="1561874922553" duration="16658000" />
       <workItem from="1561904356167" duration="8592000" />
+      <workItem from="1562525406224" duration="14463000" />
+      <workItem from="1562578673980" duration="4269000" />
+      <workItem from="1563009697668" duration="66000" />
+      <workItem from="1565945913470" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_test1 - 2019.06.14 at 02h 18m 25s.xml">
-      <configuration name="test.test1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_test1 - 2019.06.14 at 02h 18m 53s.xml">
-      <configuration name="test.test1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_test1 - 2019.06.14 at 02h 19m 37s.xml">
-      <configuration name="test.test1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_test2 - 2019.06.30 at 14h 33m 11s.xml">
-      <configuration name="test.test2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_test2 - 2019.06.30 at 14h 37m 05s.xml">
-      <configuration name="test.test2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="test_test2 - 2019.06.30 at 14h 42m 58s.xml">
-      <configuration name="test.test2" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="test_test2 - 2019.06.30 at 14h 43m 38s.xml">
       <configuration name="test.test2" configurationId="JUnit" />
     </history-entry>
@@ -1126,14 +1109,33 @@
     <history-entry file="test_test2 - 2019.06.30 at 14h 56m 44s.xml">
       <configuration name="test.test2" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="test_test2 - 2019.07.08 at 13h 02m 03s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.07.08 at 13h 10m 45s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.07.08 at 13h 11m 50s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.07.08 at 14h 36m 19s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.07.08 at 14h 36m 47s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.07.08 at 14h 37m 16s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356226000" />
+    <option name="totallyTimeSpent" value="375043000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4977778" visible="true" weight="0.17700455" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4977778" visible="true" weight="0.18683812" />
       <window_info id="Structure" order="1" sideWeight="0.50222224" side_tool="true" weight="0.20726173" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1142,9 +1144,9 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2753623" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.273752" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32718894" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2749616" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40552995" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1152,7 +1154,7 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.25120774" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.28548387" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.22383253" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.22273426" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32850242" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
@@ -1366,6 +1368,28 @@
     <entry file="file://$PROJECT_DIR$/out/artifacts/first_time_war_exploded/WEB-INF/classes/static/chat/root@test.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/page/尹大虎的主页.html" />
+    <entry file="file://$PROJECT_DIR$/web/page/test.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/controller/ajax_controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="229" column="9" selection-start-line="229" selection-start-column="9" selection-end-line="229" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/util/File_tool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/out/artifacts/first_time_war_exploded/WEB-INF/classes/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1375,91 +1399,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="133">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/service/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="114">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/controller/user_controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
+        <state relative-caret-position="494">
           <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/util/File_tool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/尹大虎的主页.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/page/test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/page/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="279" column="5" lean-forward="true" selection-start-line="279" selection-start-column="5" selection-end-line="279" selection-end-column="5" />
+        <state relative-caret-position="5130">
+          <caret line="270" column="49" selection-start-line="270" selection-start-column="49" selection-end-line="270" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2983">
+          <caret line="177" selection-start-line="177" selection-start-column="2" selection-end-line="180" selection-end-column="30" />
           <folding>
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/firsttime/controller/ajax_controller.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="161" column="54" selection-start-line="161" selection-start-column="54" selection-end-line="161" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="399">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
     </entry>

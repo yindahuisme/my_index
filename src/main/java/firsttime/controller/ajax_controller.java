@@ -15,6 +15,10 @@ import org.apache.http.impl.client.HttpClients;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -326,6 +330,72 @@ public class ajax_controller {
                         }
                     }
 
+
+
+                //Í¼Áé»úÆ÷ÈË
+//                BufferedReader br=null;
+//                InputStream is=null;
+//
+//                String requeststr= "ÄãÊÇË­£¿";
+//                String info = null;
+//                try {
+//                    info = URLEncoder.encode(requeststr, "utf-8");
+//                } catch (UnsupportedEncodingException e) {
+//                    e.printStackTrace();
+//                }
+//                String APIkey = "60fe6afc27cf41f2af702d9086b795f7";
+//                String getUrl = "http://www.tuling123.com/openapi/api?key="
+//                        +APIkey+"&info="+info;
+//                URL url = null;
+//                try {
+//                    url = new URL(getUrl);
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                }
+//                HttpURLConnection conn = null;
+//                try {
+//                    conn = (HttpURLConnection) url.openConnection();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//                    conn.connect();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//                    is = conn.getInputStream();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                InputStreamReader isr = null;
+//                try {
+//                    isr = new InputStreamReader(is, "utf-8");
+//                } catch (UnsupportedEncodingException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                br = new BufferedReader(isr);
+//                String line = "";
+//                StringBuffer sb = new StringBuffer();
+//                try {
+//                    while ((line = br.readLine()) != null) {
+//                        sb.append(line);
+//                    }
+//                }catch (IOException e) {
+//
+//                }
+//                String str = sb.substring(sb.lastIndexOf(":"));
+//                String content=str.substring(2,str.length()-2);
+//                try {
+//                    br.close();
+//                    is.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+
+                    String tmp=content;
+                    content=tmp.replaceAll("\\{br\\}","<br>");
                     SimpleDateFormat Format=new SimpleDateFormat("yyyy.MM.dd hh.mm.ss");
 
                     try {
