@@ -16,19 +16,19 @@ public class File_tool {
     }
 
     public static synchronized void append_content(java.io.File file, String append) throws IOException {
-        BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(file));
+        BufferedReader br=new BufferedReader(new FileReader(file));
         StringBuilder des_builder=new StringBuilder();
         int len=0;
-        byte[] buffer=new byte[1024];
-        while ((len=bufferedInputStream.read(buffer))!=-1){
-            des_builder.append(new String(buffer,0,len,encoding));
+        char[] buffer=new char[1024];
+        while ((len=br.read(buffer))!=-1){
+            des_builder.append(new String(buffer,0,len));
         }
         des_builder.append(append);
         BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(new FileOutputStream(file));
         bufferedOutputStream.write(des_builder.toString().getBytes(),0,des_builder.toString().getBytes().length);
         bufferedOutputStream.flush();
         //ÊÍ·ÅÁ÷
-        bufferedInputStream.close();
+        br.close();
         bufferedOutputStream.close();
     }
 }

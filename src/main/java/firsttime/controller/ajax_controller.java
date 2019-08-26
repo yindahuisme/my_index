@@ -135,12 +135,12 @@ public class ajax_controller {
         }
 
 
-        BufferedInputStream bufferedInputStream=new BufferedInputStream(new FileInputStream(m_file));
+        BufferedReader buffered=new BufferedReader(new FileReader(m_file));
         StringBuilder builder=new StringBuilder();
         int len=0;
-        byte[] buffer=new byte[1024];
-        while ((len=bufferedInputStream.read(buffer))!=-1){
-            builder.append(new String(buffer,0,len,File_tool.encoding));
+        char[] buffer=new char[1024];
+        while ((len=buffered.read(buffer))!=-1){
+            builder.append(new String(buffer,0,len));
         }
         StringTokenizer tokenizer=new StringTokenizer(builder.toString(),"%%##**");
 
@@ -197,7 +197,7 @@ public class ajax_controller {
                 //如果不是当前聊天user,continue
                 if(!destination_name.trim().equals(name))
                 continue;
-                //判断我方输入，敌方输入
+                //判断我方输入，对方输入
                 if(Integer.valueOf(msg_item.substring(19, 21))>50)
                 {
                     result.append("   <div style=\"float:left;width:100%; height: 25px;text-align: center\"><h5>"+time+"</h5></div>\n" +
@@ -240,7 +240,7 @@ public class ajax_controller {
         writer.print(result.toString());
 
         //释放流
-        bufferedInputStream.close();
+        buffered.close();
         wri.close();
     }
 
